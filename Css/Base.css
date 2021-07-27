@@ -1,0 +1,147 @@
+/* 
+=============
+RESET ESTILOS
+=============
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0px;
+  font-size: 1.6rem;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 1rem;
+  line-height: 1em;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 
+=========
+VARIABLES
+=========
+*/
+
+html {
+
+  /* Dimensiones */
+  --ancho-area-activa: 1200px;
+  --alto-barra-superior: 50px;
+  --padding-horizontal: 1.5rem;
+
+  /* Tonos Color Neutro */
+  --neutro-oscuro-1: hsl(0, 0%, 20%);
+  --neutro-oscuro-2: hsl(0, 0%, 25%);
+
+  /* Tonos Color Primario */
+  --color-primario-1: hsl(30, 85%, 75%);
+
+  /* Tipografía */
+  --fuente-principal: 'Segoe UI', sans-serif;
+
+  /* Efectos */
+  --transicion-general: all 250ms linear;
+}
+
+/* 
+=================
+ESTILOS GENERALES
+=================
+*/
+
+body {
+  font-family: var(--fuente-principal);
+}
+
+main p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--neutro-oscuro-1);
+}
+
+/* 
+==========
+ESTRUCTURA
+==========
+*/
+
+div.area-activa {
+  margin: 0px auto;
+  max-width: var(--ancho-area-activa);
+}
+
+/* 
+==============
+BARRA SUPERIOR
+==============
+*/
+
+header.barra-superior {
+  min-height: var(--alto-barra-superior);
+  background-color: var(--neutro-oscuro-1);
+}
+
+header.barra-superior div.area-activa {
+  padding-left: var(--padding-horizontal);
+}
+
+header.barra-superior div.area-activa::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+header.barra-superior h1.logo {
+  float: left;
+  margin-bottom: 0px;
+  padding-top: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  color: white;
+}
+
+header.barra-superior nav.menu-navegacion {
+  float: right;
+  color: white;
+}
+
+header.barra-superior nav.menu-navegacion ul {
+  font-size: 0px;
+}
+
+header.barra-superior nav.menu-navegacion li {
+  display: inline-block;
+  font-size: 1.4rem;
+  transition: var(--transicion-general);
+  transition-property: background-color, color;
+}
+
+header.barra-superior nav.menu-navegacion li:hover,
+header.barra-superior nav.menu-navegacion li.pagina-actual {
+  color: var(--color-primario-1);
+  background-color: var(--neutro-oscuro-2);
+}
+
+header.barra-superior nav.menu-navegacion a {
+  display: block;
+  padding: 1.5rem 1.5rem;
+}
