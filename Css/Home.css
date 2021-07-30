@@ -5,3 +5,120 @@ IMPORTACIONES
 */
 
 @import url('Base.css');
+
+/* 
+=============
+SECCIÓN: HERO
+=============
+*/
+
+section#seccion-hero {
+  min-height: 60vh;
+  background-image: url('../Recursos/Imagenes/Fondo-Hero.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+
+section#seccion-hero div.area-activa {
+  position: relative;
+}
+
+section#seccion-hero div.contenido {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0px var(--padding-horizontal);
+  text-align: center;
+  color: white;
+}
+
+section#seccion-hero h2.titulo-seccion {
+  margin-bottom: 2rem;
+  font-size: 4.8rem;
+  text-transform: capitalize;
+}
+
+section#seccion-hero h2.titulo-seccion em {
+  color: var(--color-primario-1);
+}
+
+section#seccion-hero p.descripcion {
+  max-width: 60ch;
+  margin: 0px auto;
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 1.5em;
+  color: inherit;
+}
+
+section#seccion-hero a.boton-hero {
+  margin-top: 3.5rem;
+  padding: 1.25rem 3.25rem;
+  font-size: 1.5rem;
+}
+
+/* 
+=================
+SECCIÓN: HISTORIA
+=================
+*/
+
+section#seccion-historia {
+  background-color: var(--neutro-oscuro-1);
+}
+
+section#seccion-historia div.area-activa::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+section#seccion-historia figure.columna-izquierda {
+  float: left;
+  width: 50%;
+}
+
+section#seccion-historia figure.columna-izquierda img {
+  object-fit: cover;
+}
+
+section#seccion-historia div.columna-derecha {
+  float: right;
+  width: 50%;
+  padding: var(--padding-vertical) var(--padding-horizontal);
+  text-align: center;
+  color: white;
+}
+
+section#seccion-historia div.columna-derecha h2.titulo-seccion {
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
+  text-transform: capitalize;
+}
+
+section#seccion-historia div.columna-derecha h2.titulo-seccion em {
+  color: var(--color-primario-1);
+}
+
+section#seccion-historia div.columna-derecha p {
+  color: inherit;
+  margin: 0px auto;
+  max-width: 60ch;
+  text-align: justify;
+}
+
+section#seccion-historia div.columna-derecha p:not(:first-of-type) {
+  margin-top: 2rem;
+}
+
+section#seccion-historia div.columna-derecha a.boton-historia {
+  margin-top: 3.5rem;
+  background-color: white;
+  color: var(--neutro-oscuro-1);
+}
+
+section#seccion-historia div.columna-derecha a.boton-historia:hover {
+  background-color: var(--color-primario-1);
+}

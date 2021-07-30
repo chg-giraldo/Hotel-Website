@@ -23,8 +23,17 @@ ul {
   list-style-type: none;
 }
 
-h1 {
-  font-size: 1rem;
+figure {
+  margin: 0px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1, h2 {
+  font-size: 1.6rem;
   line-height: 1em;
   margin: 0px;
 }
@@ -32,6 +41,10 @@ h1 {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+em {
+  font-style: normal;
 }
 
 /* 
@@ -45,7 +58,8 @@ html {
   /* Dimensiones */
   --ancho-area-activa: 1200px;
   --alto-barra-superior: 50px;
-  --padding-horizontal: 1.5rem;
+  --padding-vertical: 5rem;
+  --padding-horizontal: 2rem;
 
   /* Tonos Color Neutro */
   --neutro-oscuro-1: hsl(0, 0%, 20%);
@@ -72,8 +86,9 @@ body {
 }
 
 main p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 300;
+  line-height: 1.35em;
   color: var(--neutro-oscuro-1);
 }
 
@@ -84,8 +99,33 @@ ESTRUCTURA
 */
 
 div.area-activa {
-  margin: 0px auto;
   max-width: var(--ancho-area-activa);
+  min-height: inherit;
+  margin: 0px auto;
+}
+
+/* 
+=======================
+ELEMENTOS TRANSVERSALES
+=======================
+*/
+
+[class|='boton'] {
+  display: inline-block;
+  background-color: var(--neutro-oscuro-1);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  color: white;
+  cursor: pointer;
+  transition: var(--transicion-general);
+  transition-property: background-color, color;
+}
+
+[class|='boton']:hover {
+  background-color: var(--color-primario-1);
+  color: var(--neutro-oscuro-1);
 }
 
 /* 
@@ -113,7 +153,7 @@ header.barra-superior h1.logo {
   float: left;
   margin-bottom: 0px;
   padding-top: 1.5rem;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 0.02em;
   color: white;
