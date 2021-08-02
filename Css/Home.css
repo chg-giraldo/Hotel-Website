@@ -122,3 +122,51 @@ section#seccion-historia div.columna-derecha a.boton-historia {
 section#seccion-historia div.columna-derecha a.boton-historia:hover {
   background-color: var(--color-primario-1);
 }
+
+/* 
+=================
+SECCIÓN: FEATURES
+=================
+*/
+
+section#seccion-features {
+  background-color: var(--neutro-claro-1);
+}
+
+section#seccion-features div.area-activa::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+section#seccion-features article.feature {
+  float: left;
+  width: calc(100% / 3);
+  padding: var(--padding-vertical) var(--padding-horizontal);
+  text-align: center;
+}
+
+section#seccion-features article.feature:nth-child(even) {
+  background-color: var(--color-primario-1);
+}
+
+section#seccion-features article.feature {
+  color: var(--neutro-oscuro-1);
+}
+
+section#seccion-features article.feature i.icono {
+  margin-bottom: 1.25rem;
+}
+
+section#seccion-features article.feature i.icono::before {
+  font-size: 2.8rem;
+}
+
+section#seccion-features article.feature h3.titulo {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+}
+
+section#seccion-features article.feature p {
+  margin: 0px;
+}

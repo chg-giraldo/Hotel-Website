@@ -1,5 +1,13 @@
 /* 
 =============
+IMPORTACIONES
+=============
+*/
+
+@import url('../Fuentes/FontAwesome/Principal.css');
+
+/* 
+=============
 RESET ESTILOS
 =============
 */
@@ -32,7 +40,7 @@ img {
   width: 100%;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-size: 1.6rem;
   line-height: 1em;
   margin: 0px;
@@ -57,13 +65,15 @@ html {
 
   /* Dimensiones */
   --ancho-area-activa: 1200px;
-  --alto-barra-superior: 50px;
+  --altura-barra-superior: 50px;
+  --altura-footer: 70px;
   --padding-vertical: 5rem;
   --padding-horizontal: 2rem;
 
   /* Tonos Color Neutro */
   --neutro-oscuro-1: hsl(0, 0%, 20%);
   --neutro-oscuro-2: hsl(0, 0%, 25%);
+  --neutro-claro-1: hsl(0, 0%, 96%);
 
   /* Tonos Color Primario */
   --color-primario-1: hsl(30, 85%, 75%);
@@ -82,6 +92,7 @@ ESTILOS GENERALES
 */
 
 body {
+  background-color: var(--neutro-claro-1);
   font-family: var(--fuente-principal);
 }
 
@@ -97,6 +108,10 @@ main p {
 ESTRUCTURA
 ==========
 */
+
+main {
+  min-height: calc(100vh - var(--altura-barra-superior) - var(--altura-footer));
+}
 
 div.area-activa {
   max-width: var(--ancho-area-activa);
@@ -135,11 +150,12 @@ BARRA SUPERIOR
 */
 
 header.barra-superior {
-  min-height: var(--alto-barra-superior);
+  height: var(--altura-barra-superior);
   background-color: var(--neutro-oscuro-1);
 }
 
 header.barra-superior div.area-activa {
+  height: inherit;
   padding-left: var(--padding-horizontal);
 }
 
@@ -151,8 +167,15 @@ header.barra-superior div.area-activa::after {
 
 header.barra-superior h1.logo {
   float: left;
+  height: var(--altura-barra-superior);
   margin-bottom: 0px;
-  padding-top: 1.5rem;
+}
+
+header.barra-superior h1.logo a {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 0.02em;
@@ -161,15 +184,18 @@ header.barra-superior h1.logo {
 
 header.barra-superior nav.menu-navegacion {
   float: right;
+  height: var(--altura-barra-superior);
   color: white;
 }
 
 header.barra-superior nav.menu-navegacion ul {
+  height: inherit;
   font-size: 0px;
 }
 
 header.barra-superior nav.menu-navegacion li {
   display: inline-block;
+  height: inherit;
   font-size: 1.4rem;
   transition: var(--transicion-general);
   transition-property: background-color, color;
@@ -183,5 +209,40 @@ header.barra-superior nav.menu-navegacion li.pagina-actual {
 
 header.barra-superior nav.menu-navegacion a {
   display: block;
-  padding: 1.5rem 1.5rem;
+  height: inherit;
+  padding: 0px 1.5rem;
+}
+
+header.barra-superior nav.menu-navegacion a span {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 
+======
+FOOTER
+======
+*/
+
+footer#footer-pagina {
+  height: var(--altura-footer);
+  background-color: var(--neutro-oscuro-1);
+  padding: 0px var(--padding-horizontal);
+}
+
+footer#footer-pagina div.area-activa {
+  height: inherit;
+}
+
+footer#footer-pagina div.texto-footer {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-transform: capitalize;
+  color: var(--neutro-claro-1);
 }
