@@ -5,3 +5,134 @@ IMPORTACIONES
 */
 
 @import url('Base.css');
+
+/* 
+============
+RUTA ENLACES
+============
+*/
+
+html {
+  --ruta-fondo-seccion-testimonios: 
+    url('../Recursos/Imagenes/Fondo-Testimonios.jpg');
+}
+
+/* 
+===============
+SECCIÓN: ACERCA
+===============
+*/
+
+section#seccion-acerca {
+  --ancho-fotografia: 260px;
+  padding: var(--padding-vertical) 0px;
+}
+
+section#seccion-acerca div.area-activa {
+  padding: 0px var(--padding-horizontal);
+}
+
+section#seccion-acerca div.area-activa::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+section#seccion-acerca div.columna-izquierda {
+  float: left;
+  width: 50%;
+}
+
+section#seccion-acerca h2.titulo-seccion {
+  margin-bottom: 2.5rem;
+  font-size: 3.2rem;
+  color: var(--neutro-oscuro-1);
+}
+
+section#seccion-acerca h2.titulo-seccion em {
+  color: var(--color-primario-1);
+}
+
+section#seccion-acerca div.columna-izquierda p {
+  --margen-parrafos: 1.25rem;
+}
+
+section#seccion-acerca div.columna-derecha {
+  float: right;
+  width: 50%;
+  padding-left: var(--padding-horizontal);
+}
+
+section#seccion-acerca figure.fotografia-hotel {
+  max-width: var(--ancho-fotografia);
+  aspect-ratio: 1 / 1;
+  margin-left: auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+section#seccion-acerca figure.fotografia-hotel img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* 
+====================
+SECCIÓN: TESTIMONIOS
+====================
+*/
+
+section#seccion-testimonios {
+  --ancho-imagen-perfil: 100px;
+  background-image: var(--ruta-fondo-seccion-testimonios);
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  padding: 10rem 0px;
+}
+
+section#seccion-testimonios h2.titulo-seccion {
+  margin-bottom: 5rem;
+  font-size: 4rem;
+  font-weight: 300;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+}
+
+section#seccion-testimonios article.testimonio {
+  width: max-content;
+  margin: 0px auto;
+  border-radius: 10px;
+  background-color: hsla(var(--componentes-primario-1), 80%);
+  padding: 3rem 2rem;
+}
+
+section#seccion-testimonios article.testimonio:not(:first-of-type) {
+  margin-top: 3rem;
+}
+
+section#seccion-testimonios article.testimonio::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+section#seccion-testimonios figure.imagen-perfil {
+  float: left;
+  width: var(--ancho-imagen-perfil);
+  height: var(--ancho-imagen-perfil);
+  margin-right: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+section#seccion-testimonios figure.imagen-perfil img {
+  height: 100%;
+}
+
+section#seccion-testimonios article.testimonio blockquote.texto p {
+  max-width: 65ch;
+  color: black;
+}

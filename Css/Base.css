@@ -31,6 +31,10 @@ ul {
   list-style-type: none;
 }
 
+blockquote {
+  margin: 0px;
+}
+
 figure {
   margin: 0px;
 }
@@ -64,7 +68,7 @@ VARIABLES
 html {
 
   /* Dimensiones */
-  --ancho-area-activa: 1200px;
+  --ancho-area-activa: 1000px;
   --altura-barra-superior: 50px;
   --altura-footer: 70px;
   --padding-vertical: 5rem;
@@ -76,7 +80,8 @@ html {
   --neutro-claro-1: hsl(0, 0%, 96%);
 
   /* Tonos Color Primario */
-  --color-primario-1: hsl(30, 85%, 75%);
+  --componentes-primario-1: 30, 85%, 75%;
+  --color-primario-1: hsl(var(--componentes-primario-1));
 
   /* Tipografía */
   --fuente-principal: 'Segoe UI', sans-serif;
@@ -97,10 +102,19 @@ body {
 }
 
 main p {
+  margin-bottom: 0px;
   font-size: 1.6rem;
   font-weight: 300;
-  line-height: 1.35em;
+  line-height: 1.4em;
   color: var(--neutro-oscuro-1);
+}
+
+main p:first-of-type {
+  margin-top: 0px;
+}
+
+main p:not(:first-of-type) {
+  margin-top: var(--margen-parrafos);
 }
 
 /* 
@@ -149,29 +163,29 @@ BARRA SUPERIOR
 ==============
 */
 
-header.barra-superior {
+header#barra-superior {
   height: var(--altura-barra-superior);
   background-color: var(--neutro-oscuro-1);
 }
 
-header.barra-superior div.area-activa {
+header#barra-superior div.area-activa {
   height: inherit;
   padding-left: var(--padding-horizontal);
 }
 
-header.barra-superior div.area-activa::after {
+header#barra-superior div.area-activa::after {
   display: block;
   clear: both;
   content: '';
 }
 
-header.barra-superior h1.logo {
+header#barra-superior h1.logo {
   float: left;
   height: var(--altura-barra-superior);
   margin-bottom: 0px;
 }
 
-header.barra-superior h1.logo a {
+header#barra-superior h1.logo a {
   display: inline-block;
   position: relative;
   top: 50%;
@@ -182,18 +196,18 @@ header.barra-superior h1.logo a {
   color: white;
 }
 
-header.barra-superior nav.menu-navegacion {
+header#barra-superior nav.menu-navegacion {
   float: right;
   height: var(--altura-barra-superior);
   color: white;
 }
 
-header.barra-superior nav.menu-navegacion ul {
+header#barra-superior nav.menu-navegacion ul {
   height: inherit;
   font-size: 0px;
 }
 
-header.barra-superior nav.menu-navegacion li {
+header#barra-superior nav.menu-navegacion li {
   display: inline-block;
   height: inherit;
   font-size: 1.4rem;
@@ -201,19 +215,19 @@ header.barra-superior nav.menu-navegacion li {
   transition-property: background-color, color;
 }
 
-header.barra-superior nav.menu-navegacion li:hover,
-header.barra-superior nav.menu-navegacion li.pagina-actual {
+header#barra-superior nav.menu-navegacion li:hover,
+header#barra-superior nav.menu-navegacion li.pagina-actual {
   color: var(--color-primario-1);
   background-color: var(--neutro-oscuro-2);
 }
 
-header.barra-superior nav.menu-navegacion a {
+header#barra-superior nav.menu-navegacion a {
   display: block;
   height: inherit;
   padding: 0px 1.5rem;
 }
 
-header.barra-superior nav.menu-navegacion a span {
+header#barra-superior nav.menu-navegacion a span {
   display: inline-block;
   position: relative;
   top: 50%;
@@ -229,7 +243,7 @@ FOOTER
 footer#footer-pagina {
   height: var(--altura-footer);
   background-color: var(--neutro-oscuro-1);
-  padding: 0px var(--padding-horizontal);
+  padding: 0px;
 }
 
 footer#footer-pagina div.area-activa {
@@ -240,6 +254,7 @@ footer#footer-pagina div.texto-footer {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  padding: 0px var(--padding-horizontal);
   text-align: center;
   font-size: 1.4rem;
   font-weight: 300;

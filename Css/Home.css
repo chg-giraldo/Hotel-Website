@@ -6,6 +6,18 @@ IMPORTACIONES
 
 @import url('Base.css');
 
+
+/* 
+============
+RUTA ENLACES
+============
+*/
+
+html {
+  --ruta-fondo-seccion-hero: 
+    url('../Recursos/Imagenes/Fondo-Hero.jpg');
+}
+
 /* 
 =============
 SECCIÓN: HERO
@@ -14,7 +26,7 @@ SECCIÓN: HERO
 
 section#seccion-hero {
   min-height: 60vh;
-  background-image: url('../Recursos/Imagenes/Fondo-Hero.jpg');
+  background-image: var(--ruta-fondo-seccion-hero);
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
@@ -87,7 +99,7 @@ section#seccion-historia figure.columna-izquierda img {
 section#seccion-historia div.columna-derecha {
   float: right;
   width: 50%;
-  padding: var(--padding-vertical) var(--padding-horizontal);
+  padding: var(--padding-vertical) 3rem;
   text-align: center;
   color: white;
 }
@@ -103,14 +115,12 @@ section#seccion-historia div.columna-derecha h2.titulo-seccion em {
 }
 
 section#seccion-historia div.columna-derecha p {
+  --margen-parrafos: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   color: inherit;
-  margin: 0px auto;
   max-width: 60ch;
   text-align: justify;
-}
-
-section#seccion-historia div.columna-derecha p:not(:first-of-type) {
-  margin-top: 2rem;
 }
 
 section#seccion-historia div.columna-derecha a.boton-historia {
