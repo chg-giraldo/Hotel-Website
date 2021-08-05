@@ -1,0 +1,131 @@
+/* 
+=============
+IMPORTACIONES
+=============
+*/
+
+@import url('Base.css');
+
+
+/* 
+=======
+GENERAL
+=======
+*/
+
+body {
+  background-color: var(--neutro-oscuro-1);
+}
+
+/* 
+============================
+SECCIÓN: FORMULARIO CONTACTO
+============================
+*/
+
+section#seccion-formulario {
+  background-color: var(--neutro-claro-1);
+  padding: var(--padding-vertical) 0px;
+}
+
+section#seccion-formulario div.area-activa {
+  padding: 0px var(--padding-horizontal);
+}
+
+section#seccion-formulario header {
+  margin-bottom: 3rem;
+}
+
+section#seccion-formulario h2.titulo-formulario {
+  margin-bottom: 1rem;
+  font-size: 3.6rem;
+  font-weight: bold;
+  color: var(--neutro-oscuro-1);
+}
+
+section#seccion-formulario h2.titulo-formulario em {
+  color: var(--color-primario-1);
+}
+
+section#seccion-formulario div.grupo-formulario:not(:first-of-type) {
+  margin-top: 1.5rem;
+}
+
+section#seccion-formulario div.grupo-formulario label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+section#seccion-formulario div.grupo-formulario :is(input, textarea) {
+  --padding-campo: 1rem;
+  display: block;
+  width: 100%;
+  background-color: var(--neutro-claro-1);
+  border: solid 1px var(--neutro-claro-2);
+  padding: var(--padding-campo);
+  font-size: 1.6rem;
+  transition: var(--transicion-general);
+  transition-property: border-color;
+}
+
+section#seccion-formulario div.grupo-formulario textarea {
+  --minimo-lineas: 5;
+  --maximo-lineas: 10;
+  --leading-campo: 1.5em;
+  line-height: var(--leading-campo);
+  resize: vertical;
+  min-height: calc(2 * var(--padding-campo) + var(--minimo-lineas) * var(--leading-campo) + 2px);
+  max-height: calc(2 * var(--padding-campo) + var(--maximo-lineas) * var(--leading-campo) + 2px);
+}
+
+section#seccion-formulario div.grupo-formulario :is(input, textarea):focus {
+  border-color: var(--color-primario-1);
+}
+
+section#seccion-formulario div.grupo-boton {
+  margin-top: 3rem !important;
+}
+/* 
+=============================
+SECCIÓN: INFORMACIÓN CONTACTO
+=============================
+*/
+
+section#seccion-info-contacto {
+  background-color: var(--neutro-oscuro-1);
+  color: var(--neutro-claro-1);
+}
+
+section#seccion-info-contacto::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+section#seccion-info-contacto article.columna-contacto {
+  float: left;
+  width: calc(100% / 3);
+  padding: var(--padding-vertical) var(--padding-horizontal);
+  text-align: center;
+}
+
+section#seccion-info-contacto article.columna-contacto header {
+  margin-bottom: 2rem;
+}
+
+section#seccion-info-contacto i.icono-contacto {
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+}
+
+section#seccion-info-contacto h3.nombre-contacto {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+section#seccion-info-contacto div.texto-contacto p {
+  font-size: 1.5rem;
+  color: inherit;
+}

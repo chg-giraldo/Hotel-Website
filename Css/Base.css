@@ -44,6 +44,16 @@ img {
   width: 100%;
 }
 
+input, textarea {
+  margin: 0px;
+  border-style: solid;
+  outline: none;
+}
+
+input, textarea, button {
+  font-family: inherit;
+}
+
 h1, h2, h3 {
   font-size: 1.6rem;
   line-height: 1em;
@@ -78,6 +88,7 @@ html {
   --neutro-oscuro-1: hsl(0, 0%, 20%);
   --neutro-oscuro-2: hsl(0, 0%, 25%);
   --neutro-claro-1: hsl(0, 0%, 96%);
+  --neutro-claro-2: hsl(0, 0%, 88%);
 
   /* Tonos Color Primario */
   --componentes-primario-1: 30, 85%, 75%;
