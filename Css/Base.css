@@ -79,10 +79,9 @@ html {
 
   /* Dimensiones */
   --ancho-area-activa: 1000px;
-  --altura-barra-superior: 50px;
   --altura-footer: 70px;
   --padding-vertical: 5rem;
-  --padding-horizontal: 2rem;
+  --padding-horizontal: 3rem;
 
   /* Tonos Color Neutro */
   --neutro-oscuro-1: hsl(0, 0%, 20%);
@@ -145,6 +144,27 @@ div.area-activa {
 }
 
 /* 
+=========================
+MEDIA QUERIES: ESTRUCTURA
+=========================
+*/
+
+/* Break Points: A) 0px, B) 520px, C) 760px */
+/* Rango AB: < 520px */
+@media (max-width: 519px) {
+  html {
+    --altura-barra-superior: 170px;
+  }
+}
+
+/* Rango BZ: > 520px */
+@media (min-width: 520px) {
+  html {
+    --altura-barra-superior: 50px;
+  }
+}
+
+/* 
 =======================
 ELEMENTOS TRANSVERSALES
 =======================
@@ -181,46 +201,25 @@ header#barra-superior {
 
 header#barra-superior div.area-activa {
   height: inherit;
-  padding-left: var(--padding-horizontal);
-}
-
-header#barra-superior div.area-activa::after {
-  display: block;
-  clear: both;
-  content: '';
-}
-
-header#barra-superior h1.logo {
-  float: left;
-  height: var(--altura-barra-superior);
-  margin-bottom: 0px;
 }
 
 header#barra-superior h1.logo a {
   display: inline-block;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 0.02em;
   color: white;
 }
 
 header#barra-superior nav.menu-navegacion {
-  float: right;
-  height: var(--altura-barra-superior);
   color: white;
 }
 
 header#barra-superior nav.menu-navegacion ul {
-  height: inherit;
   font-size: 0px;
 }
 
 header#barra-superior nav.menu-navegacion li {
   display: inline-block;
-  height: inherit;
   font-size: 1.4rem;
   transition: var(--transicion-general);
   transition-property: background-color, color;
@@ -233,22 +232,105 @@ header#barra-superior nav.menu-navegacion li.pagina-actual {
 }
 
 header#barra-superior nav.menu-navegacion a {
-  display: block;
-  height: inherit;
-  padding: 0px 1.5rem;
-}
-
-header#barra-superior nav.menu-navegacion a span {
   display: inline-block;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 100%;
 }
 
 /* 
-======
-FOOTER
-======
+=============================
+MEDIA QUERIES: BARRA SUPERIOR
+=============================
+*/
+
+/* Break Points: A) 0px, B) 520px, C) 760px */
+/* Rango AB: < 520px */
+@media (max-width: 519px) {
+  header#barra-superior div.area-activa {
+    position: relative;
+  }
+
+  header#barra-superior div.contenido-barra {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+
+  header#barra-superior h1.logo {
+    margin-bottom: 1.5rem;
+  }
+
+  header#barra-superior h1.logo a {
+    font-size: 2.4rem;
+  }
+
+  header#barra-superior nav.menu-navegacion li {
+    width: 100%;
+  }
+
+  header#barra-superior nav.menu-navegacion a {
+    padding: 0.75rem 2rem;
+  }
+}
+
+/* Rango BZ: > 520px */
+@media (min-width: 520px) {
+  header#barra-superior div.contenido-barra {
+    height: inherit;
+    padding-left: var(--padding-horizontal);
+  }
+
+  header#barra-superior div.contenido-barra::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+
+  header#barra-superior h1.logo {
+    float: left;
+    height: var(--altura-barra-superior);
+    margin-bottom: 0px;
+  }
+
+  header#barra-superior h1.logo a {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+  }
+
+  header#barra-superior nav.menu-navegacion {
+    float: right;
+    height: var(--altura-barra-superior);
+  }
+
+  header#barra-superior nav.menu-navegacion ul {
+    height: inherit;
+  }
+
+  header#barra-superior nav.menu-navegacion li {
+    height: inherit;
+  }
+
+  header#barra-superior nav.menu-navegacion a {
+    height: inherit;
+    padding: 0px 1.5rem;
+  }
+
+  header#barra-superior nav.menu-navegacion a span {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* 
+=============
+PIE DE PÁGINA
+=============
 */
 
 footer#footer-pagina {

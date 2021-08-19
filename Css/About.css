@@ -24,23 +24,12 @@ SECCIÓN: ACERCA
 */
 
 section#seccion-acerca {
-  --ancho-fotografia: 260px;
+  --ancho-fotografia: 300px;
   padding: var(--padding-vertical) 0px;
 }
 
 section#seccion-acerca div.area-activa {
   padding: 0px var(--padding-horizontal);
-}
-
-section#seccion-acerca div.area-activa::after {
-  display: block;
-  clear: both;
-  content: '';
-}
-
-section#seccion-acerca div.columna-izquierda {
-  float: left;
-  width: 50%;
 }
 
 section#seccion-acerca h2.titulo-seccion {
@@ -57,16 +46,9 @@ section#seccion-acerca div.columna-izquierda p {
   --margen-parrafos: 1.25rem;
 }
 
-section#seccion-acerca div.columna-derecha {
-  float: right;
-  width: 50%;
-  padding-left: var(--padding-horizontal);
-}
-
 section#seccion-acerca figure.fotografia-hotel {
   max-width: var(--ancho-fotografia);
   aspect-ratio: 1 / 1;
-  margin-left: auto;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -74,6 +56,52 @@ section#seccion-acerca figure.fotografia-hotel {
 section#seccion-acerca figure.fotografia-hotel img {
   object-fit: cover;
   height: 100%;
+}
+
+/* 
+=============================
+MEDIA QUERIES: SECCIÓN ACERCA
+=============================
+*/
+
+/* Break Points: A) 0px, B) 520px, C) 760px */
+/* Rango AC: < 760px */
+@media (max-width: 759px) {
+  section#seccion-acerca figure.fotografia-hotel {
+    margin: 0px auto;
+    margin-top: 4rem;
+  }
+  section#seccion-acerca h2.titulo-seccion {
+    text-align: center;
+  }
+}
+
+/* Rango CZ: > 760px */
+@media (min-width: 760px) {
+  section#seccion-acerca div.area-activa::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+  
+  section#seccion-acerca div.columna-izquierda {
+    float: left;
+    width: 50%;
+  }
+
+  section#seccion-acerca div.columna-derecha {
+    float: right;
+    width: 50%;
+    padding-left: var(--padding-horizontal);
+  }
+
+  section#seccion-acerca h2.titulo-seccion {
+    text-align: left;
+  }
+
+  section#seccion-acerca figure.fotografia-hotel {
+    margin-left: auto;
+  }
 }
 
 /* 
@@ -91,6 +119,10 @@ section#seccion-testimonios {
   padding: 10rem 0px;
 }
 
+section#seccion-testimonios div.area-activa {
+  padding: 0px var(--padding-horizontal);
+}
+
 section#seccion-testimonios h2.titulo-seccion {
   margin-bottom: 5rem;
   font-size: 4rem;
@@ -101,7 +133,7 @@ section#seccion-testimonios h2.titulo-seccion {
 }
 
 section#seccion-testimonios article.testimonio {
-  width: max-content;
+  max-width: max-content;
   margin: 0px auto;
   border-radius: 10px;
   background-color: hsla(var(--componentes-primario-1), 80%);
@@ -122,7 +154,7 @@ section#seccion-testimonios figure.imagen-perfil {
   float: left;
   width: var(--ancho-imagen-perfil);
   height: var(--ancho-imagen-perfil);
-  margin-right: 3rem;
+  margin-right: 1.5rem;
   border-radius: 50%;
   overflow: hidden;
 }

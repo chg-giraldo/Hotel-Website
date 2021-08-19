@@ -14,7 +14,7 @@ GENERAL
 */
 
 body {
-  background-color: var(--neutro-oscuro-1);
+  background-color: var(--neutro-oscuro-2);
 }
 
 /* 
@@ -87,6 +87,29 @@ section#seccion-formulario div.grupo-formulario :is(input, textarea):focus {
 section#seccion-formulario div.grupo-boton {
   margin-top: 3rem !important;
 }
+
+/* 
+===========================================
+MEDIA QUERIES: SECCIÓN FORMULARIO CONTACTO
+===========================================
+*/
+
+/* Break Points: A) 0px, B) 520px, C) 760px */
+/* Rango AB: < 520px */
+@media (max-width: 519px) {
+  section#seccion-formulario button.boton-formulario {
+    width: 100%;
+  }
+}
+
+/* Rango BZ: > 520px */
+@media (min-width: 520px) {
+  section#seccion-formulario button.boton-formulario {
+    width: auto;
+  }
+}
+
+
 /* 
 =============================
 SECCIÓN: INFORMACIÓN CONTACTO
@@ -94,25 +117,18 @@ SECCIÓN: INFORMACIÓN CONTACTO
 */
 
 section#seccion-info-contacto {
-  background-color: var(--neutro-oscuro-1);
+  background-color: var(--neutro-oscuro-2);
   color: var(--neutro-claro-1);
 }
 
-section#seccion-info-contacto::after {
-  display: block;
-  clear: both;
-  content: '';
-}
-
 section#seccion-info-contacto article.columna-contacto {
-  float: left;
-  width: calc(100% / 3);
-  padding: var(--padding-vertical) var(--padding-horizontal);
+  padding-left: var(--padding-horizontal);
+  padding-right: var(--padding-horizontal);
   text-align: center;
 }
 
 section#seccion-info-contacto article.columna-contacto header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 section#seccion-info-contacto i.icono-contacto {
@@ -128,4 +144,57 @@ section#seccion-info-contacto h3.nombre-contacto {
 section#seccion-info-contacto div.texto-contacto p {
   font-size: 1.5rem;
   color: inherit;
+}
+
+/* 
+===========================================
+MEDIA QUERIES: SECCIÓN INFORMACIÓN CONTACTO
+===========================================
+*/
+
+/* Break Points: A) 0px, B) 520px, C) 760px */
+/* Rango AB: < 520px */
+@media (max-width: 519px) {
+  section#seccion-info-contacto article.columna-contacto {
+    width: 100%;
+  }
+}
+
+/* Rango BZ: > 520px */
+@media (min-width: 520px) {
+  section#seccion-info-contacto::after {
+    display: block;
+    clear: both;
+    content: '';
+  }  
+  section#seccion-info-contacto article.columna-contacto {
+    float: left;
+  }
+}
+
+/* Rango BC: 520px - 760px */
+@media (min-width: 519px) and (max-width: 759px) {
+  section#seccion-info-contacto article.columna-contacto {
+    width: 50%;
+  }
+  section#seccion-info-contacto article.columna-contacto:last-of-type {
+    width: 100%;
+  }
+}
+
+/* Rango AC: < 760px */
+@media (max-width: 760px) {
+  section#seccion-info-contacto article.columna-contacto {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Rango CZ: > 760px */
+@media (min-width: 760px) {
+  section#seccion-info-contacto article.columna-contacto {
+    width: calc(100% / 3);
+    padding-top: var(--padding-vertical);
+    padding-bottom: var(--padding-vertical);
+  }
 }
